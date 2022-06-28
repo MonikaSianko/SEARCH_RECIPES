@@ -11,7 +11,7 @@ const HeartIcon: React.FC<IIcon> = ({
     <svg
       width={width || "15"}
       height={height || "15"}
-      viewBox={`0 0  ${width} ${height}` || "0 0 15 15"}
+      viewBox={width && height ? `0 0  ${width} ${height}` : "0 0 15 15"}
       fill="none"
     >
       <path

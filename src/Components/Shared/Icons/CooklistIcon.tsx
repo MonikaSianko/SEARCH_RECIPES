@@ -11,7 +11,7 @@ const CooklistIcon: React.FC<IIcon> = ({
     <svg
       width={width || "18"}
       height={height || "18"}
-      viewBox={`0 0  ${width} ${height}` || "0 0 18 18"}
+      viewBox={width && height ? `0 0  ${width} ${height}` : "0 0 18 18"}
       fill="none"
     >
       <path

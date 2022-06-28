@@ -2,6 +2,7 @@ export const colors = {
   orange: "#F37C26",
   blue: "#00A3FF",
   blue_hover: "rgba(236, 247, 254, 0.85)",
+  grey_light: "#D0D0D0",
   grey_dark: "#868686",
   grey_extra_dark: "#605D5D",
   white_85: "rgba(255, 255, 255, 0.85)",
