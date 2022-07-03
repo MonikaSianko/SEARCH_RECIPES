@@ -6,10 +6,12 @@ import hero from "./hero.jpg";
 import Tag from "../../Shared/Tag/Tag";
 import Quote from "../../Shared/Quote/Quote";
 import { translations } from "../../../translations/translations";
+import TypeSelector from "../../Shared/TypeSelector/TypeSelector";
 
 const StyledSectionHero = styled.div`
   text-align: center;
   position: relative;
+  width: 100%;
   .hero {
     display: flex;
     align-items: center;
@@ -23,7 +25,7 @@ const StyledSectionHero = styled.div`
     z-index: -1;
     object-fit: cover;
     width: auto;
-    height: 100%;
+    height: 700px;
   }
   .tags {
     display: flex;
@@ -43,7 +45,7 @@ const SectionHero: React.FC = (): JSX.Element => {
         <Quote theme="primary" quoteText={quote_text} author={quote_author} />
       </div>
       <div className="tags">
-        {dietTypes.map((el) => (
+        {/* {dietTypes.map((el) => (
           <Tag
             styleConfig={{
               type: "diet",
@@ -53,7 +55,16 @@ const SectionHero: React.FC = (): JSX.Element => {
             text={el.translation}
             key={el.translation}
           />
-        ))}
+        ))} */}
+        <TypeSelector
+          tagsStyleConfig={{
+            type: "diet",
+            theme: "primary",
+            layout: "horizontal",
+          }}
+          tags={dietTypes}
+          typeTitle="Diet type"
+        />
       </div>
     </StyledSectionHero>
   );

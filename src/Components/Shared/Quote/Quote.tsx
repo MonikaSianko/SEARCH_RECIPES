@@ -12,6 +12,7 @@ const StyledQuote = styled.div`
     background: ${colors.bg_orange};
   }
   p {
+    width: 100%;
     font-family: "Abril Fatface", cursive;
     font-size: 20px;
     margin: 0;

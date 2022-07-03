@@ -26,6 +26,8 @@ export const colors = {
   meal_gradient_horizontal: "linear-gradient(90deg, #00A3FF 0%, #2DB3FF 100%)",
   cousine_gradient_vertical: "linear-gradient(180deg, #2EB4FF 0%, #6DCBFF 100%)",
   cousine_gradient_horizontal: "linear-gradient(90deg, #2EB4FF 0%, #6DCBFF 100%)",
+  // lines
+  line_blue: "#9BDBFFD9",
   // olds to delete
   orange_50: "rgba(255, 107, 0, 0.50)",
   grey_light: "#D0D0D0",

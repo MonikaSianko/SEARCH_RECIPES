@@ -7,7 +7,7 @@ const Tag: React.FC<ITag> = ({ styleConfig, text }: ITag): JSX.Element => {
     const { type, layout, theme } = styleConfig;
     return `${theme} ${type} ${layout}`;
   };
-  return <StyledTag className={generateClassName()}>{text}</StyledTag>;
+  return <StyledTag className={`tag ${generateClassName()}`}>{text}</StyledTag>;
 };
 
 export default Tag;

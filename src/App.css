@@ -9,6 +9,11 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  overflow-x: hidden;
+  background-color: #f5f5f5;
+}
+
 body,
 h1,
 h2,
