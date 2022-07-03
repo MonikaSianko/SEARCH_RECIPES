@@ -47,3 +47,5 @@ interface IExtendedIngredients {
   originalString: string;
   metaInformation: string[];
 }
+
+export type TDevice = "mobile" | "desktop";

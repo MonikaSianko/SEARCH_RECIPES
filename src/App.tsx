@@ -4,12 +4,13 @@ import SingleRecipeTile from "./Components/Shared/SingleRecipeTile/SingleRecipeT
 import { recipe } from "./mocks/recipe.mock";
 import "./App.css";
 import SectionHero from "./Components/Sections/SectionHero/SectionHero";
+import HomePage from "./Components/Pages/HomePage";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<SectionHero />}></Route>
+        <Route path="/" element={<HomePage />}></Route>
       </Routes>
     </Router>
   );

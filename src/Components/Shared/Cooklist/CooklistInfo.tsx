@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { translations } from "../../../translations/translations";
-import { colors } from "../../../utils/variables";
+import { breakpoints, colors } from "../../../utils/variables";
 import CooklistIcon from "../Icons/CooklistIcon";
 
 const StyledCooklistInfo = styled.div`
@@ -9,18 +8,12 @@ const StyledCooklistInfo = styled.div`
   display: flex;
   flex-direction: column;
   color: ${colors.white_100};
-  cursor: pointer;
   margin: 0;
   position: relative;
+  cursor: pointer;
   svg {
     width: 24px;
     height: 24px;
-  }
-  .title {
-    writing-mode: vertical-lr;
-    text-transform: uppercase;
-    text-orientation: upright;
-    margin-top: 5px;
   }
   .recipes-added {
     position: absolute;
@@ -34,15 +27,23 @@ const StyledCooklistInfo = styled.div`
     line-height: 20px;
     text-align: center;
   }
+  @media (${breakpoints.desktopMin}) {
+    svg {
+      width: 35px;
+      height: 35px;
+    }
+    .recipes-added {
+      top: 25px;
+      left: 20px;
+    }
+  }
 `;
 
 const CooklistInfo: React.FC = (): JSX.Element => {
-  const { cooklist } = translations;
   return (
     <StyledCooklistInfo className="cooklist-info">
       <CooklistIcon color={colors.white_100} />
       <span className="recipes-added">12</span>
-      <span className="title">{cooklist}</span>
     </StyledCooklistInfo>
   );
 };

@@ -1,4 +1,4 @@
-import { ISingleRecipe } from "../../../App.types";
+import { ISingleRecipe } from "../../../global/global.types";
 
 export interface ISingleRecipeTile {
   recipe: ISingleRecipe;

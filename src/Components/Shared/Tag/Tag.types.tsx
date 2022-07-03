@@ -1,6 +1,16 @@
+import { TDevice, TLayout, TTheme } from "../../../global/global.types";
+
 export interface ITag {
-    theme: TTagTheme;
-    text: string;
+  text: string;
+  styleConfig: IStyledTag["styleConfig"];
 }
 
-type TTagTheme = "primary" | "secondary"
+export interface IStyledTag {
+  styleConfig: {
+    theme: TTheme;
+    type: TTagType;
+    layout?: TLayout;
+  };
+}
+
+type TTagType = "diet" | "meal" | "cousine";

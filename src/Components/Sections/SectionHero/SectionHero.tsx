@@ -1,27 +1,60 @@
 import React from "react";
-import CooklistInfo from "../../Shared/Cooklist/CooklistInfo";
-import Logo from "../../Shared/Logo/Logo";
 import styled from "styled-components";
-import hero from "../../../../public/hero.jpg";
+import { getDietTypeList } from "../../../utils/helpers";
+import Header from "../../Shared/Header/Header";
+import hero from "./hero.jpg";
+import Tag from "../../Shared/Tag/Tag";
+import Quote from "../../Shared/Quote/Quote";
+import { translations } from "../../../translations/translations";
 
 const StyledSectionHero = styled.div`
-  background-image: url(hero.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
   text-align: center;
-  .cooklist-info {
-    text-align: right;
+  position: relative;
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 500px;
+  }
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+    width: auto;
+    height: 100%;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 
 const SectionHero: React.FC = (): JSX.Element => {
+  const dietTypes = getDietTypeList();
+  const { quote_text, quote_author } = translations;
   return (
     <StyledSectionHero>
-      <Logo />
-      <CooklistInfo />
+      <Header />
+      <div className="hero">
+        <img src={hero} className="background-image" />
+        <Quote theme="primary" quoteText={quote_text} author={quote_author} />
+      </div>
+      <div className="tags">
+        {dietTypes.map((el) => (
+          <Tag
+            styleConfig={{
+              type: "diet",
+              theme: "primary",
+              layout: "horizontal",
+            }}
+            text={el.translation}
+            key={el.translation}
+          />
+        ))}
+      </div>
     </StyledSectionHero>
   );
 };

@@ -24,6 +24,7 @@ const StyledCooklistButton = styled.button`
   }
   svg {
     margin-left: 5px;
+    margin-bottom: 10px;
   }
 `;
 

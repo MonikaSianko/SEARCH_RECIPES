@@ -1,23 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import { translations } from "../../../translations/translations";
-import { colors } from "../../../utils/variables";
+import { translations } from "../../../../translations/translations";
+import { breakpoints, colors } from "../../../../utils/variables";
 
 const StyledLogo = styled.div`
   text-transform: uppercase;
   font-size: 20px;
   color: ${colors.blue};
-  font-weight: 300;
+  font-weight: 500;
   span {
     color: ${colors.white_100};
-    font-weight: 500;
+  }
+  @media (${breakpoints.desktopMin}) {
+    font-size: 32px;
   }
 `;
 
 const Logo: React.FC = (): JSX.Element => {
   const { search, recipes } = translations;
   return (
-    <StyledLogo>
+    <StyledLogo className="logo">
       {search}
       <span>{recipes}</span>
     </StyledLogo>
