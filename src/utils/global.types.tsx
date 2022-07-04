@@ -1,3 +1,5 @@
+import { COUSINE, DIET, MEAL } from "./constants";
+
 export interface IIcon {
   width?: string;
   height?: string;
@@ -51,3 +53,4 @@ interface IExtendedIngredients {
 export type TDevice = "mobile" | "desktop";
 export type TLayout = "vertical" | "horizontal";
 export type TTheme = "primary" | "secondary";
+export type TFilterType = typeof DIET | typeof MEAL | typeof COUSINE;

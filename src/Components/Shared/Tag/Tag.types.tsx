@@ -1,8 +1,10 @@
-import { TDevice, TLayout, TTheme } from "../../../global/global.types";
+import { TDevice, TLayout, TTheme } from "../../../utils/global.types";
 
 export interface ITag {
   text: string;
   styleConfig: IStyledTag["styleConfig"];
+  onClick?: () => void;
+  selected?: boolean;
 }
 
 export interface IStyledTag {

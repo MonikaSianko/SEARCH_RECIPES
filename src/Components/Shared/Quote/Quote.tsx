@@ -7,7 +7,7 @@ const StyledQuote = styled.div`
   width: 100%;
   color: ${colors.white_100};
   text-align: left;
-  padding: 14px 7;
+  padding: 25px 10px;
   &.primary {
     background: ${colors.bg_orange};
   }

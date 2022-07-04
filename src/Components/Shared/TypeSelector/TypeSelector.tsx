@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import classNames from "classnames";
 import { breakpoints, colors } from "../../../utils/variables";
 import ChevronIcon from "../Icons/ChevronIcon";
 import Tag from "../Tag/Tag";
 import { IStyledTag } from "../Tag/Tag.types";
+import { getFilters } from "../../../redux/selectors";
+import { addFilter, removeFilter } from "../../../redux/actionCreators";
 
 const StyledTypeSelector = styled.div`
   background: ${colors.white_70};
@@ -62,9 +65,27 @@ const TypeSelector: React.FC<ITypeSelector> = ({
   tagsStyleConfig,
 }: ITypeSelector) => {
   const [state, setState] = useState<ITypeSelectorState>({ toggle: false });
+  const dispatch = useDispatch();
   const handleToggle = (): void => {
     setState({ ...state, toggle: !state.toggle });
   };
+  const selectedFilters = useSelector(getFilters);
+  const isSelected = (filterName: string): boolean => {
+    return selectedFilters.includes(filterName);
+  };
+
+  // const checkFilterIncluded = (filterName: string) =>
+  //   useSelector(isFilterIncluded(filterName));
+
+  const handleTagClick = (filterName: string) => (): void => {
+    if (isSelected(filterName)) {
+      dispatch(removeFilter(filterName));
+    } else {
+      dispatch(addFilter(filterName));
+    }
+  };
+  console.log(selectedFilters);
+
   return (
     <StyledTypeSelector>
       <div
@@ -76,7 +97,13 @@ const TypeSelector: React.FC<ITypeSelector> = ({
       {!state.toggle && (
         <div className="tags">
           {tags.map((el) => (
-            <Tag key={el} text={el} styleConfig={tagsStyleConfig} />
+            <Tag
+              key={el}
+              text={el}
+              styleConfig={tagsStyleConfig}
+              onClick={handleTagClick(el)}
+              selected={isSelected(el)}
+            />
           ))}
         </div>
       )}

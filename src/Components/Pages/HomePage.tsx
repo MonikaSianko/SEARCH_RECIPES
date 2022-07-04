@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import SectionHero from "../Sections/SectionHero/SectionHero";
+import BoxHero from "../Boxes/BoxHero/BoxHero";
 import axios from "axios";
+import BoxFilters from "../Boxes/BoxFilters/BoxFilters";
 
 const HomePage: React.FC = (): JSX.Element => {
   const options = {
@@ -33,7 +34,8 @@ const HomePage: React.FC = (): JSX.Element => {
 
   return (
     <div>
-      <SectionHero />
+      <BoxHero />
+      <BoxFilters />
     </div>
   );
 };

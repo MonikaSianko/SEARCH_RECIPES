@@ -7,6 +7,9 @@ export const StyledTag = styled.span`
   box-shadow: ${shadows.basic};
   color: ${colors.white_100};
   white-space: nowrap;
+  &.clickable {
+    cursor: pointer;
+  }
   &.primary {
     font-size: 14px;
     font-weight: 300;
@@ -43,7 +46,9 @@ export const StyledTag = styled.span`
     padding: 2px 8px;
     font-size: 10px;
   }
-
+  &.selected {
+    background: red;
+  }
   //DESKTOP
   @media only screen and (${breakpoints.desktopMin}) {
     &.primary {
